@@ -10,6 +10,7 @@
       padding: 0;
       background: transparent;
       overflow: hidden;
+      font-family: Arial, sans-serif;
     }
     .wrap {
       padding: 10px;
@@ -26,10 +27,11 @@
 </head>
 <body>
   <div class="wrap">
-    <audio controls preload="metadata">
-      <source src="Monalisa.mp3" type="audio/mpeg">
+    <audio controls preload="metadata" id="player">
       Browser Anda tidak mendukung audio.
     </audio>
   </div>
-</body>
-</html>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const file = params.get
