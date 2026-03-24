@@ -12,33 +12,63 @@
       overflow: hidden;
       font-family: Arial, sans-serif;
     }
+
     .wrap {
-      padding: 10px;
       box-sizing: border-box;
-      text-align: center;
+      padding: 12px;
     }
+
+    .player-box {
+      background: linear-gradient(135deg, #d9c39a, #b08b57);
+      border: 2px solid #8a6a3d;
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+      padding: 12px;
+    }
+
+    .title {
+      font-size: 16px;
+      font-weight: bold;
+      color: #2f2416;
+      margin: 0 0 10px 0;
+      text-align: center;
+      line-height: 1.4;
+      word-break: break-word;
+    }
+
     audio {
       width: 100%;
-      max-width: 500px;
       display: block;
-      margin: 0 auto;
+      border-radius: 10px;
     }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <audio controls preload="metadata" id="player">
-      Browser Anda tidak mendukung audio.
-    </audio>
+    <div class="player-box">
+      <div class="title" id="title">Audio Player</div>
+      <audio controls preload="metadata" id="player">
+        Browser Anda tidak mendukung audio.
+      </audio>
+    </div>
   </div>
 
   <script>
     const params = new URLSearchParams(window.location.search);
     const file = params.get("file");
+    const title = params.get("title");
+
+    const player = document.getElementById("player");
+    const titleEl = document.getElementById("title");
 
     if (file) {
-      const player = document.getElementById("player");
       player.src = file;
+    }
+
+    if (title) {
+      titleEl.textContent = decodeURIComponent(title);
+    } else if (file) {
+      titleEl.textContent = file.replace(/\.[^/.]+$/, "").replace(/[-_]/g, " ");
     }
   </script>
 </body>
