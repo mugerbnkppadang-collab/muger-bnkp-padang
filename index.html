@@ -3,11 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Audio Blog</title>
+  <title>Audio Player</title>
+  <style>
+    body { margin: 0; padding: 10px; text-align: center; }
+    audio { width: 100%; max-width: 500px; }
+  </style>
 </head>
-<body style="margin:0; padding:20px; font-family:Arial,sans-serif; text-align:center;">
-  <audio controls preload="auto" style="width:100%; max-width:500px;">
-    <source src="Monalisa%20Zalukhu%20-%20%20Haube%20Fondrara%20D%C3%B6d%C3%B6.mp3" type="audio/mpeg">
+<body>
+  <audio controls preload="metadata">
+    <source src="Monalisa.mp3" type="audio/mpeg">
     Browser Anda tidak mendukung audio.
   </audio>
 </body>
