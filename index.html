@@ -34,4 +34,12 @@
 
   <script>
     const params = new URLSearchParams(window.location.search);
-    const file = params.get
+    const file = params.get("file");
+
+    if (file) {
+      const player = document.getElementById("player");
+      player.src = file;
+    }
+  </script>
+</body>
+</html>
