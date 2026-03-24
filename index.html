@@ -5,14 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Audio Player</title>
   <style>
-    body { margin: 0; padding: 10px; text-align: center; }
-    audio { width: 100%; max-width: 500px; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: transparent;
+      overflow: hidden;
+    }
+    .wrap {
+      padding: 10px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+    audio {
+      width: 100%;
+      max-width: 500px;
+      display: block;
+      margin: 0 auto;
+    }
   </style>
 </head>
 <body>
-  <audio controls preload="metadata">
-    <source src="Monalisa.mp3" type="audio/mpeg">
-    Browser Anda tidak mendukung audio.
-  </audio>
+  <div class="wrap">
+    <audio controls preload="metadata">
+      <source src="Monalisa.mp3" type="audio/mpeg">
+      Browser Anda tidak mendukung audio.
+    </audio>
+  </div>
 </body>
 </html>
